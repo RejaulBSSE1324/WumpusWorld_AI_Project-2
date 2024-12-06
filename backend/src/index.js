@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import { Agent, GameEngine } from './ai';
+import Agent from './ai/Agent.js';
+import GameEngine from './ai/GameEngine.js';
 
 const app = express();
 const port = process.env.PORT || 3001;

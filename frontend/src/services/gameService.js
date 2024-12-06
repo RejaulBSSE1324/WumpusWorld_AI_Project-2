@@ -1,6 +1,6 @@
 // gameService.js - Handles game state management and interactions
-import Agent from '../../../backend/src/ai/Agent';
-import GameEngine from '../../../backend/src/ai/GameEngine';
+import Agent from '../../../backend/src/ai/Agent.js';
+import GameEngine from '../../../backend/src/ai/GameEngine.js';
 
 class GameService {
     constructor() {
