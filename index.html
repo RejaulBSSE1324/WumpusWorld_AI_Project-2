@@ -1,236 +1,158 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-site-verification" content="_wZ35Xum9aqHSxcBbLx_RvjqJBHuamAQ6qmru5QZNWc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wumpus World Game</title>
+  <meta name="author" content="Luka Steinbach">
+  <meta name="description"
+    content="Navigate through the rooms to find an arrow to kill the Wumpus. Be careful not to fall into one of the deadly pits or run into the Wumpus.">
+  <meta name="keywords" content="wumpus world, game, wumpus world game, knowledge-based agent, Hunt the Wumpus, logic">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
 
-    <title>Wumpus World Simulator</title>
-
-    <meta name="author" content="Thiago Ferreira">
-    <meta name="description" content="A Wumpus World Simulator developed in Javascript, HTML and CSS">
-    <meta name="keywords" content="wumpus world, simulator, wumpus world simulator">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="rgba(72, 120, 160, 1)">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <!-- Favicons to all plataforms -->
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/manifest.json">
-
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Vendor -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-
-    <!-- Application -->
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="js/misc.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js" onload="updateVolume"></script>
+  <script src="js/sketch.js"></script>
+  <script src="js/progressbar.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/room.js"></script>
+  <script src="js/agent.js"></script>
+  <script src="js/wumpus.js"></script>
+  <script src="js/pit.js"></script>
+  <script src="js/gold.js"></script>
+  <script src="js/astar.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap-social.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Wumpus World Simulator</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-controls" data-i18n="controls">Controls</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/thiagodnf/wumpus-world-simulator" data-i18n="source-code" target="_blank">Source Code</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <select data-validation="required" id="select-language" tabindex="-1">
-                        <option value="en_us" data-icon="fi fi-us" data-i18n="en_us">en_us</option>
-                        <option value="pt_br" data-icon="fi fi-br" data-i18n="pt_br">pt_br</option>
-                        <option value="ar" data-icon="fi fi-tn" data-i18n="ar">ar</option>
-                        <option value="fr" data-icon="fi fi-fr" data-i18n="fr">fr</option>
-                        <option value="tr_TR" data-icon="fi fi-tr" data-i18n="tr_TR">tr_TR</option>
-                    </select>
-                </form>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="card card-game">
-                    <div class="card-content">
-                        <canvas id="canvas" width="480" height="480" data-i18n="no-canvas-support"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-
-
-                <div class="card">
-                    <div class="card-header">
-                        <nav>
-                            <div class="nav nav-tabs card-header-tabs">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#info-tab" type="button" data-i18n="info">Info</button>
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#settings-tab" type="button" data-i18n="settings">Settings</button>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="card-body">
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="info-tab" role="tabpanel">
-                                <p>
-                                    <img src="img/score-icon.png" width="16px" />
-                                    <span data-i18n="score">Score</span>:
-                                    <span id="score">0</span>
-                                </p>
-                                <p>
-                                    <img src="img/arrow-icon.png" width="16px" />
-                                    <span data-i18n="arrow">Arrow</span>:
-                                    <span id="arrow">0</span>
-                                </p>
-                                <p>
-                                    <img src="img/gold-icon.png" width="16px" />
-                                    <span data-i18n="remaining-golds">Remaining Golds</span>:
-                                    <span id="gold">0</span>
-                                </p>
-                                <hr />
-                                <button data-bs-toggle="modal" data-bs-target="#modal-share" class="btn btn-success" data-i18n="share">Share</button>
-                            </div>
-                            <div class="tab-pane fade" id="settings-tab" role="tabpanel">
-                                <form>
-                                    <div class="mb-3">
-                                        <input class="form-check-input" tabindex="-1" type="checkbox" value="true" id="btn-remove-walls">
-                                        <label class="form-check-label" tabindex="-1" for="btn-remove-walls" data-i18n="settings-remove-walls">Remove Walls</label>
-                                    </div>
-                                    <hr />
-                                    <div>
-                                        <label tabindex="-1" class="form-label" for="btn-volume" data-i18n="settings-volume">Volume</label>
-                                        <input type="range" min="0.0" max="1.0" value="0.2" step="0.1" class="form-range" id="btn-volume">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="">Wumpus World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a target="_blank" class="nav-link" href="https://github.com/luka1199/wumpus-world">Repo</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="" data-toggle="modal" data-target="#controlsModal">
+            Controls
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="" data-toggle="modal" data-target="#aboutModal">
+            About
+          </a>
+        </li>
+        <li class="nav-item active" id="github-profile-button">
+          <a class="btn btn-social-icon btn-github" target="_blank" href="https://github.com/luka1199">
+            <span class="fa fa-github"></span>
+          </a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="modal" tabindex="-1" id="modal-game-over">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <h3 data-i18n="game-over">Game Over</h3>
-                    <img src="img/game_over.jpg" alt="Sorry! game over">
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary btn-restart" data-i18n="restart">Restart</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+  <div class="container">
+    <div id="canvas-container" class="canvas-container"></div>
+    <div class="sidebar-container">
+      <div class="sidebar">
+        <div class="sidebar-content">
+          <label for="world-size-slider">World size: <span class="world-size-value"></span></label><br>
+          <input type="range" min="4" max="20" value="4" class="slider" id="world-size-slider">
+        </div>
+        <div class="sidebar-content">
+          <input type="checkbox" id="world-auto-increment">
+          <label for="world-auto-increment">Increase world size after victory</label>
+        </div>
+        <div class="sidebar-content">
+          <label for="volume-slider">Volume: <span class="volume-value"></span></label><br>
+          <input type="range" min="0" max="100" value="10" class="slider" id="volume-slider">
+        </div>
+        <button type="button" class="btn btn-dark btn-lg" onclick="restart(); this.blur();">Restart</button>
+      </div>
+    </div>
+  </div>
 
-    <div class="modal" tabindex="-1" id="modal-win">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <h3 data-i18n="congratulations">Congratulations</h3>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary btn-restart" data-i18n="restart">Restart</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+  <!-- Controls -->
+  <div class="modal fade" id="controlsModal" tabindex="-1" role="dialog" aria-labelledby="controlsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="controlsModalLabel">Controls</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="img/controls.png" style="width:100%">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <div class="modal" tabindex="-1" id="modal-share">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" data-i18n="share">Share</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="textarea-link">Link:</label>
-                        <textarea class="form-control" rows="5" id="textarea-link"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="close">Close</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="modal" tabindex="-1" id="modal-controls">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="label-controls" data-i18n="controls">Controls</h5>
-                </div>
-                <div class="modal-body">
-                    <img src="img/controls.png" class="img-fluid" />
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="close">Close</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!-- Vendor -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/farhadmammadli/bootstrap-select@main/js/bootstrap-select.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.messagestore.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.fallbacks.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.language.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.parser.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.bidi.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-
-    <!-- Application -->
-    <script src="js/utils/random-utils.js"></script>
-    <script src="js/utils/array-utils.js"></script>
-    <script src="js/core/resources.js"></script>
-    <script src="js/core/environment.js"></script>
-    <script src="js/core/keys.js"></script>
-    <script src="js/core/player.js"></script>
-    <script src="js/script.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM7NW3TEM6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-QM7NW3TEM6');
-    </script>
-
+  <!-- About -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel">The Wumpus world</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The Wumpus world is a simple world example to illustrate the worth of a knowledge-based agent and to represent
+          knowledge
+          representation. It was inspired by a video game Hunt the Wumpus by Gregory Yob in 1973. <br>
+          <br>
+          The Wumpus world is a cave which has rooms connected with passageways. We have a knowledge-based agent who
+          will go
+          forward in this world. The cave has a room with a beast which is called Wumpus, who eats anyone who enters the
+          room. The
+          Wumpus can be shot by the agent, but the agent has to find an arrow first, which spawns somewhere in the cave.
+          In the
+          Wumpus world, there are pits which are bottomless, and if the agent falls in a pit, he will be stuck there
+          forever. The
+          agent goal is to find the arrow and kill the Wumpus without falling into a pit or getting killed by the
+          Wumpus. <br>
+          In the rooms directly adjacent to a pit, the agent can perceive a breeze.
+          In the rooms directly adjacent to the wumpus, the agent can perceive a stench.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
