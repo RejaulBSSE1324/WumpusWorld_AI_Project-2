@@ -41,25 +41,25 @@ class Agent(pygame.sprite.Sprite):
 
     def move_up(self):
         self.y -= self.spacing
-        self.score -= 10
+        self.score -= 1  # Movement penalty
         if self.i > 0:
             self.i -= 1
 
     def move_down(self):
         self.y += self.spacing
-        self.score -= 10
+        self.score -= 1  # Movement penalty
         if self.i < 9:
             self.i += 1
 
     def move_left(self):
         self.x -= self.spacing
-        self.score -= 10
+        self.score -= 1  # Movement penalty
         if self.j > 0:
             self.j -= 1
 
     def move_right(self):
         self.x += self.spacing
-        self.score -= 10
+        self.score -= 1  # Movement penalty
         if self.j < 9:
             self.j += 1
 
@@ -98,18 +98,21 @@ class Agent(pygame.sprite.Sprite):
 
         self.rect.center = (self.x, self.y)
 
+    def hit_wumpus(self):
+        self.score += 500  # Reward for killing Wumpus
+
     def get_pos(self):
         return self.i, self.j
 
     def shoot(self):
-        self.score -= 100
+        self.score -= 10  # Shooting penalty
 
     def wumpus_or_pit_collision(self):
-        self.score -= 10000
+        self.score -= 1000  # Severe penalty for dying
 
     def grab_gold(self):
-        self.score += 100
+        self.score += 1000  # Reward for collecting gold
 
     def climb(self):
-        self.score += 10
+        self.score += 500  # Bonus for exiting the map successfully
 
