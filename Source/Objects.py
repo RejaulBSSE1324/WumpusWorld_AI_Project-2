@@ -106,7 +106,7 @@ class Gold:
         textRect.center = self.pos
         screen.blit(text, textRect)
         screen.blit(self.image, (750, 200))
-        text = font.render('Score + 100', True, BLACK)
+        text = font.render('Score + 1000', True, BLACK)
         textRect.center = (900, 600)
         screen.blit(text, textRect)
         pygame.display.update()
